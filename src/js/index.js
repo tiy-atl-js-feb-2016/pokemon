@@ -11,8 +11,15 @@ var fighters = [
   {
     name: 'Snorelax',
     url: 'http://cdn.bulbagarden.net/upload/thumb/f/fb/143Snorlax.png/250px-143Snorlax.png'
+  },
+  {
+    name: 'Pikachu',
+    url: 'http://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/250px-025Pikachu.png'
+  },
+  {
+    name: 'Scyther',
+    url: 'http://cdn.bulbagarden.net/upload/thumb/b/ba/123Scyther.png/250px-123Scyther.png'
   }
-
 ]
 
 function setFighters(a, b) {
@@ -28,13 +35,29 @@ function status(msg) {
   $('.status').text(msg);
 }
 
-setFighters(fighters[0], fighters[1]);
-status('Fight!');
+$('.choosescene').on('click', '.fighter-select', event => {
+  var fighterName = $(event.currentTarget).data('fighter');
 
-setTimeout(() => {
+  // console.log(event.target, fighterName);
 
-  var winner = _.sample(fighters);
+  // var [fighter1] = fighters.filter(obj => obj.name === fighterName);
+  var fighter1 = _.find(fighters, {name: fighterName});
+  var fighter2 = _.sample(fighters);
 
-  status(`${winner.name} is the winner!`);
+  // console.log(fighter1, fighter2);
+  
+  setFighters(fighter1, fighter2);
+  status('Fight!');
 
-}, 5000);
+  $('.choosescene').hide();
+  $('.fightscene').show();
+
+  setTimeout(() => {
+
+    var winner = _.sample(['CPU', 'You']);
+
+    status(`${winner} Won!`);
+
+  }, 5000);
+});
+

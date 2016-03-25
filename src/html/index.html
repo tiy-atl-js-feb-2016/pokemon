@@ -3,15 +3,37 @@
 <head>
   <title>TIY Project</title>
   <link rel="stylesheet" href="css/main.css">
-</head>
+</head> 
 <body>
   <div class="app">
-    <div class="fightcage">
-      <div class="fighter1"></div>
-      <div>VS</div>
-      <div class="fighter2"></div>
+
+    <div class="choosescene">
+      <div>Choose your fighter</div>
+      <div class="fighters">
+        <div data-fighter="Charizard" class="fighter-select">
+          <img src="http://cdn.bulbagarden.net/upload/thumb/7/7e/006Charizard.png/250px-006Charizard.png" width="100">
+        </div>
+        <div data-fighter="Snorelax" class="fighter-select">
+          <img src="http://cdn.bulbagarden.net/upload/thumb/f/fb/143Snorlax.png/250px-143Snorlax.png" width="100">
+        </div>
+        <div data-fighter="Pikachu" class="fighter-select">
+          <img src="http://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/250px-025Pikachu.png" width="100">
+        </div>
+        <div data-fighter="Scyther" class="fighter-select">
+          <img src="http://cdn.bulbagarden.net/upload/thumb/b/ba/123Scyther.png/250px-123Scyther.png" width="100">
+        </div>
+      </div>
     </div>
-    <h1 class="status"></h1>
+
+    <div class="fightscene">
+      <div class="fightcage">
+        <div class="fighter1"></div>
+        <div>VS</div>
+        <div class="fighter2"></div>
+      </div>
+      <h1 class="status"></h1>
+    </div>
+
   </div>
   <script src="js/bundle.js"></script>
 </body>
